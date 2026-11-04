@@ -1,0 +1,28 @@
+Save your photos in this folder using these exact file names.
+Each grey 'Photo space' box on the website shows the name it expects.
+
+gallery-1.jpg
+gallery-2.jpg
+gallery-3.jpg
+gallery-4.jpg
+gallery-5.jpg
+gallery-6.jpg
+gap-mentorship.jpg
+hero-technician.jpg
+hiring-process.jpg
+impact-facility.jpg
+journey-1.jpg
+opportunity-floor.jpg
+pillar-growth.jpg
+pillar-industrial.jpg
+pillar-leadership.jpg
+pillar-maintenance.jpg
+pillar-quality.jpg
+pillar-safety.jpg
+pillar-technical.jpg
+tile-csr.jpg
+tile-government.jpg
+tile-itis.jpg
+tile-msmes.jpg
+tile-parents.jpg
+tile-students.jpg

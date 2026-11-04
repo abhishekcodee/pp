@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact Us — PRAYAS</title><meta name="description" content="Contact PRAYAS: students, MSMEs, government, institutions and CSR partners."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"><style>
+  :root{
+    --ink:#0b1220;
+    --ink-soft:#3c4759;
+    --paper:#fbfaf7;
+    --paper-alt:#f2f0ea;
+    --accent:#0f3460;
+    --accent-2:#e8622c;
+    --line:#e3e0d8;
+    --radius:16px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{font-family:'Sora',sans-serif;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent-2);
+    margin-bottom:10px;
+  }
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,250,247,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px;line-height:1.1;}
+  .logo img{height:34px;width:auto;display:block;}
+  .logo .logo-text{display:flex;flex-direction:column;}
+  .logo span{font-size:10px;font-weight:500;color:var(--ink-soft);letter-spacing:0.03em;}
+  nav.desktop-nav{display:flex;gap:32px;font-weight:600;font-size:14.5px;}
+  nav.desktop-nav a:hover{color:var(--accent-2);}
+  .nav-ctas{display:flex;gap:10px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:999px;font-weight:700;font-size:14.5px;
+    cursor:pointer;border:none;white-space:nowrap;transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--accent-2);color:#fff;box-shadow:0 6px 18px rgba(232,98,44,0.35);}
+  .btn-secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent);}
+  .btn-ghost{background:var(--paper-alt);color:var(--ink);}
+  .btn-small{padding:9px 16px;font-size:13px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .hamburger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;}
+  /* ---------- MOBILE MENU ---------- */
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    padding:8px 24px 20px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:14px 4px;font-weight:600;border-bottom:1px solid var(--line);}
+  /* ---------- HERO ---------- */
+  .hero{padding:56px 0;position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(circle at 78% 8%, rgba(15,52,96,0.08), transparent 55%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center;}
+  .hero-inner{max-width:640px;}
+  .hero h1{font-size:42px;font-weight:800;margin:0 0 18px;line-height:1.12;}
+  .hero p.lede{font-size:18px;color:var(--ink-soft);margin:0 0 30px;max-width:600px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+  .trust-bar{
+    display:flex;gap:0;border-top:1px solid var(--line);padding-top:28px;flex-wrap:wrap;
+  }
+  .trust-stat{flex:1;min-width:130px;padding-right:24px;}
+  .trust-stat b{display:block;font-family:'Sora',sans-serif;font-size:26px;font-weight:800;color:var(--accent);}
+  .trust-stat span{font-size:13px;color:var(--ink-soft);}
+  .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(11,18,32,0.18);}
+  .hero-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;}
+  .hero-media .tag{
+    position:absolute;bottom:16px;left:16px;right:16px;background:rgba(11,18,32,0.78);
+    color:#fff;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;
+    display:flex;align-items:center;gap:8px;backdrop-filter:blur(6px);
+  }
+  .tag .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;flex:0 0 auto;}
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:64px 0;}
+  .section-alt{background:var(--paper-alt);}
+  .section-dark{background:var(--ink);color:#fff;}
+  .section-dark .section-head p{color:#aab2c5;}
+  .section-head{max-width:640px;margin-bottom:36px;}
+  .section-head.center{max-width:680px;margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:29px;font-weight:700;margin:0 0 12px;}
+  .section-head p{color:var(--ink-soft);font-size:16px;margin:0;}
+  /* ---------- PROBLEM / BRIDGE ---------- */
+  .bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .bridge-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;
+  }
+  .bridge-card h3{font-size:18px;margin:0 0 10px;}
+  .bridge-card p{margin:0;color:var(--ink-soft);font-size:15px;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+  .split.reverse .split-media{order:2;}
+  .split-media img{border-radius:18px;width:100%;object-fit:cover;aspect-ratio:4/3;box-shadow:0 16px 36px rgba(11,18,32,0.12);}
+  .checklist{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;}
+  .checklist li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);}
+  .checklist li::before{content:"✓";color:var(--accent-2);font-weight:800;flex:0 0 auto;}
+  /* ---------- FRAMEWORK: desktop grid / mobile carousel ---------- */
+  .framework-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  .pillar{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;flex:0 0 auto;
+  }
+  .pillar .pillar-img{width:100%;aspect-ratio:16/10;object-fit:cover;}
+  .pillar .pillar-body{padding:18px 18px 20px;}
+  .pillar .num{font-family:'Sora',sans-serif;font-weight:800;color:var(--accent-2);font-size:13px;margin-bottom:8px;}
+  .pillar h4{font-size:15px;margin:0 0 6px;}
+  .pillar p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  .framework-scroll{display:none;}
+  /* ---------- AUDIENCE TILES ---------- */
+  .tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;}
+  .tile img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+  .tile-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .tile-body h4{margin:0;font-size:16px;}
+  .tile-body p{margin:0;font-size:13.5px;color:var(--ink-soft);flex:1;}
+  .tile-body a{font-size:13.5px;font-weight:700;color:var(--accent-2);}
+  /* ---------- CHOOSE YOUR PATH ---------- */
+  .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .path-card{
+    border-radius:var(--radius);padding:36px 30px;color:#fff;position:relative;overflow:hidden;
+  }
+  .path-card.student{background:linear-gradient(135deg,#0f3460,#1a4d8f);}
+  .path-card.employer{background:linear-gradient(135deg,#20293b,#3c4a63);}
+  .path-card .eyebrow-light{color:#ffd7b0;text-transform:uppercase;letter-spacing:0.12em;font-size:12px;font-weight:700;margin-bottom:12px;}
+  .path-card h3{font-size:24px;margin:0 0 12px;}
+  .path-card p{font-size:14.5px;opacity:0.88;margin:0 0 24px;}
+  .path-card .btn-primary{background:#fff;color:var(--ink);box-shadow:none;}
+  .path-card .btn-primary:hover{background:#f2f0ea;}
+  /* ---------- TIMELINE (Student Journey) ---------- */
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .tl-step{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .tl-step img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .tl-body{padding:14px 16px 18px;}
+  .tl-body .tl-num{font-family:'Sora',sans-serif;font-weight:800;color:var(--accent-2);font-size:12px;}
+  .tl-body h4{font-size:14.5px;margin:8px 0 6px;}
+  .tl-body p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+  /* ---------- HIRING PROCESS STEPS ---------- */
+  .steps-list{display:grid;gap:14px;}
+  .step-row{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;align-items:flex-start;}
+  .step-row .step-num{
+    width:36px;height:36px;border-radius:50%;background:var(--paper-alt);color:var(--accent-2);
+    font-family:'Sora',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  }
+  .step-row h4{margin:0 0 4px;font-size:15.5px;}
+  .step-row p{margin:0;font-size:14px;color:var(--ink-soft);}
+  /* ---------- ECOSYSTEM CARDS ---------- */
+  .eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px;}
+  .eco-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:26px;}
+  .eco-card h4{margin:0 0 10px;font-size:16.5px;color:#fff;}
+  .eco-card p{margin:0;font-size:14px;color:#b7bfd1;}
+  .testimonial-card{
+    background:linear-gradient(135deg,#0f3460,#1a2b4d);border-radius:18px;padding:34px 36px;
+    display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  }
+  .testimonial-card .tag-pill{display:inline-block;background:rgba(232,98,44,0.18);color:#ffb98a;font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;}
+  .testimonial-card blockquote{margin:0 0 18px;font-size:19px;font-weight:600;color:#fff;line-height:1.4;}
+  .testimonial-card .attribution{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#c7cede;}
+  .testimonial-card .avatar{width:36px;height:36px;border-radius:50%;background:var(--accent-2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex:0 0 auto;}
+  /* ---------- VISION BANNER ---------- */
+  .vision-banner{
+    background:linear-gradient(135deg,#0f3460,#0b1220);color:#fff;border-radius:22px;
+    padding:56px 44px;text-align:center;position:relative;overflow:hidden;
+  }
+  .vision-banner .eyebrow{color:#ffb98a;}
+  .vision-banner h2{font-size:30px;margin:0 auto 16px;max-width:720px;}
+  .vision-banner p{color:#c7cede;max-width:620px;margin:0 auto;font-size:15.5px;}
+  /* ---------- IMPACT STATS ---------- */
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px;}
+  .stat-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;}
+  .stat-card b{display:block;font-family:'Sora',sans-serif;font-size:24px;font-weight:800;color:var(--accent-2);}
+  .stat-card span{font-size:12.5px;color:var(--ink-soft);}
+  .verified-note{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink-soft);margin-bottom:36px;}
+  /* ---------- FAQ accordion ---------- */
+  .faq-item{border-bottom:1px solid var(--line);padding:18px 0;cursor:pointer;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15.5px;}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;font-size:14.5px;color:var(--ink-soft);}
+  .faq-item.open .faq-a{max-height:200px;padding-top:10px;}
+  .faq-item.open .faq-q .chev{transform:rotate(45deg);}
+  .chev{transition:transform .2s ease;font-size:20px;color:var(--accent-2);}
+  /* ---------- CONTACT FORM ---------- */
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:36px;}
+  .contact-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .contact-form h3{margin:0 0 6px;font-size:20px;}
+  .contact-form>p{margin:0 0 22px;color:var(--ink-soft);font-size:14px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .field label{display:block;font-size:11.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
+  .field input,.field textarea,.field select{
+    width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:inherit;font-size:14.5px;background:var(--paper);
+  }
+  .field textarea{resize:vertical;min-height:90px;}
+  .contact-side{display:flex;flex-direction:column;gap:18px;}
+  .info-card{background:var(--paper-alt);border:1px solid var(--line);border-radius:16px;padding:22px;}
+  .info-card h4{margin:0 0 10px;font-size:15px;}
+  .info-card p{margin:0 0 4px;font-size:14px;color:var(--ink-soft);}
+  .info-card a{color:var(--accent);font-weight:700;}
+  .info-card.notice{background:#fff3ec;border-color:#f4d3bf;}
+  /* ---------- CLOSING CTA ---------- */
+  .closing{background:var(--ink);color:#fff;text-align:center;padding:72px 0;}
+  .closing h2{font-size:32px;margin:0 0 14px;}
+  .closing p{color:#c7cede;margin:0 0 30px;}
+  .closing .hero-ctas{justify-content:center;}
+  /* ---------- FOOTER ---------- */
+  footer{background:#080e1a;color:#8b94a8;padding:56px 0 28px;font-size:13.5px;}
+  .footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+  .footer-brand img{height:70px;width:auto;margin-bottom:16px;}
+  .footer-brand p{max-width:320px;line-height:1.6;color:#8b94a8;}
+  .footer-social{display:flex;gap:10px;margin-top:16px;}
+  .footer-social a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:13px;color:#c7cede;}
+  footer h5{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 16px;}
+  footer nav.footer-nav{display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;text-align:center;font-size:12.5px;color:#6b7385;}
+  /* ---------- STICKY MOBILE CTA BAR ---------- */
+  .mobile-cta-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:#fff;border-top:1px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;box-shadow:0 -6px 20px rgba(0,0,0,0.08);
+  }
+  .mobile-cta-bar .btn{flex:1;padding:13px 10px;font-size:14px;}
+  /* ================= RESPONSIVE: MOBILE (<768px) ================= */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-media{order:-1;max-width:420px;}
+    .split{grid-template-columns:1fr;}
+    .split.reverse .split-media{order:0;}
+    .tile-grid{grid-template-columns:1fr 1fr;}
+    .eco-grid{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .testimonial-card{grid-template-columns:1fr;}
+  }
+  @media (max-width:768px){
+    nav.desktop-nav{display:none;}
+    .nav-ctas .btn-secondary{display:none;}
+    .nav-ctas .btn-primary{display:none;}
+    .hamburger{display:flex;}
+    .hero{padding:32px 0;}
+    .hero h1{font-size:28px;}
+    .hero h1 .desktop-only-text{display:none;}
+    .hero p.lede{font-size:15px;}
+    .hero-ctas{margin-bottom:28px;}
+    .hero-ctas .btn-secondary{display:none;} /* mobile hero: ONE primary CTA only, per the divergence rule */
+    .trust-bar{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--line);}
+    .trust-stat{padding-right:0;}
+    section{padding:44px 0;}
+    .section-head h2{font-size:23px;}
+    .bridge-grid{grid-template-columns:1fr;gap:16px;}
+    /* framework becomes a swipeable carousel on mobile */
+    .framework-grid{display:none;}
+    .framework-scroll{
+      display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+      padding-bottom:8px;margin:0 -24px;padding-left:24px;padding-right:24px;
+    }
+    .framework-scroll .pillar{min-width:78%;scroll-snap-align:start;}
+    .tile-grid{grid-template-columns:1fr;gap:16px;}
+    .path-grid{grid-template-columns:1fr;gap:16px;}
+    .path-card{padding:26px 22px;}
+    .timeline{grid-template-columns:1fr 1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .form-row{grid-template-columns:1fr;}
+    body{padding-bottom:74px;} /* room for sticky bar */
+    .mobile-cta-bar{display:flex;}
+    .closing .hero-ctas .btn-secondary{display:none;}
+    .vision-banner{padding:40px 26px;}
+  }
+  @media (min-width:769px){
+    .mobile-menu{display:none !important;}
+  }
+
+.photo-slot{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-height:140px;border:2px dashed #bdb8aa;border-radius:16px;background:repeating-linear-gradient(45deg,#f2f0ea,#f2f0ea 12px,#ebe8df 12px,#ebe8df 24px);color:#7b7566;font:600 13px Manrope,sans-serif;padding:12px;overflow:hidden}
+.photo-slot.filled{border:0;padding:0;background:none}.photo-slot img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
+.hero-media .photo-slot,.split-media .photo-slot{box-shadow:0 16px 36px rgba(11,18,32,.12)}.pillar .photo-slot,.tile .photo-slot{border-radius:0;border-width:0 0 2px 0}
+.muted{color:var(--ink-soft)}.lead{max-width:680px;color:var(--ink-soft)}
+.page-hero{background:linear-gradient(135deg,#0f3460,#0b1f3a);color:#fff;padding:56px 0}.page-hero h1{font-size:clamp(28px,4vw,40px);margin:0 0 12px}.page-hero p{color:#d5dbe8;max-width:620px}.page-hero .eyebrow{color:#ffd7b0}
+.dd{position:relative}.dd>div{display:none;position:absolute;top:100%;left:-10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px;min-width:190px;flex-direction:column;z-index:60}
+.dd:hover>div,.dd:focus-within>div,.dd.open>div{display:flex}.dd>div a{padding:7px 10px;border-radius:6px;font-weight:500}.dd>div a:hover{background:var(--paper-alt)}
+.flow .nodes{list-style:none;margin:0 0 16px;padding:0;display:flex;gap:10px}.flow li{flex:1;position:relative}
+.flow li:not(:last-child)::after{content:"\2192";position:absolute;right:-10px;top:50%;transform:translate(50%,-50%);color:var(--accent-2);font-weight:800;z-index:1}
+.node{width:100%;height:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px;font:600 14px Manrope,sans-serif;cursor:pointer}
+.node b{display:block;color:var(--accent-2);font:800 12px Sora,sans-serif;margin-bottom:4px}.node:hover{border-color:var(--accent)}.node.on{background:var(--accent);color:#fff;border-color:var(--accent)}.node.on b{color:#ffd7b0}
+.panel{background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent-2);border-radius:12px;padding:18px 20px}.panel h4{margin:0 0 6px}.panel p{margin:0;color:var(--ink-soft)}
+.stairs .nodes{align-items:flex-end}.stairs li:nth-child(1) .node{min-height:80px}.stairs li:nth-child(2) .node{min-height:110px}.stairs li:nth-child(3) .node{min-height:140px}.stairs li:nth-child(4) .node{min-height:170px}.stairs li:nth-child(5) .node{min-height:200px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 20px}.tabs button{padding:9px 16px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font:700 14px Manrope,sans-serif;cursor:pointer}.tabs button.on{background:var(--accent-2);border-color:var(--accent-2);color:#fff}
+[data-pane]{display:none}[data-pane].on{display:block}.start{display:inline-block;background:var(--paper-alt);border:1.5px dashed var(--accent);border-radius:99px;padding:6px 14px;font-weight:700;font-size:13px;margin-bottom:12px}
+.win{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(11,18,32,.1)}
+.bar{background:var(--paper-alt);padding:10px 14px;display:flex;gap:6px;align-items:center;font-size:13px;font-weight:700;border-bottom:1px solid var(--line)}
+.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840;margin-right:8px}
+.faq{display:grid;grid-template-columns:1fr 1.2fr}.faq .qs{display:flex;flex-direction:column;border-right:1px solid var(--line)}.faq .node{height:auto;padding:14px 16px;border:0;border-bottom:1px solid var(--line);border-radius:0}.faq .ans{padding:22px}.faq .ans h4{margin:0 0 8px}
+.sides{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin:24px 0}.side{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.side small{color:var(--accent-2);font-weight:800;text-transform:uppercase;font-size:11px}
+.side p{font:600 17px Sora,sans-serif;margin:8px 0 0}.span{width:36px;height:6px;background:var(--line);border-radius:3px;transition:width .8s,background .8s}.sides.built .span{width:120px;background:var(--accent-2)}
+.built-msg{opacity:0;transition:opacity .6s .5s;text-align:center;font-weight:700;color:var(--accent-2)}.sides.built+.built-msg{opacity:1}
+.chal{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 18px}.chal summary{padding:16px 0;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}.chal summary::after{content:"+";color:var(--accent-2);font-size:20px}.chal[open] summary::after{content:"\2212"}.chal div{padding:0 0 16px;color:var(--ink-soft)}
+.calc{background:var(--accent);color:#fff;border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:24px}.calc label{display:block;font-size:12px;font-weight:700;margin:10px 0 4px;color:#d5dbe8}.calc input{width:100%;padding:10px;border-radius:8px;border:0;font:inherit}
+.calc .out{background:rgba(255,255,255,.08);border-radius:12px;padding:20px;text-align:center}.calc .out b{display:block;font:800 34px Sora,sans-serif;color:#ffd7b0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+@media(max-width:900px){.hero-media{order:0;max-width:100%}.hero-media .photo-slot,.hero-media img{aspect-ratio:16/9!important}}
+@media(max-width:768px){.hero h1 .desktop-only-text{display:inline!important}section{padding:36px 0}.hide-m{display:none!important}
+.tile-grid{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -24px;padding:0 24px 8px}.tile{min-width:78%;scroll-snap-align:start}
+.split-media .photo-slot,.pillar .photo-slot{aspect-ratio:16/9!important}}
+@media(max-width:800px){.flow .nodes{flex-direction:column}.flow li:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}.stairs li .node{min-height:0!important}.faq,.sides,.calc,.grid3{grid-template-columns:1fr!important}.faq .qs{border-right:0}.span{width:6px;height:30px;margin:0 auto}.sides.built .span{width:6px;height:60px}.dd>div{position:static;display:flex;border:0}}
+
+.desktop-nav a.active{color:var(--accent-2)}.desktop-nav a.soon,.mobile-menu a.soon,.footer-nav a.soon,.dd>div a.soon{opacity:.5}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#0b1220;color:#fff;padding:10px 18px;border-radius:99px;font-size:14px;z-index:99;opacity:0;pointer-events:none;transition:opacity .25s}.toast.on{opacity:1}
+</style></head><body><header><div class="nav-row"><a href="index.html" class="logo"><span class="logo-text">PRAYAS<span>Building India's Manufacturing Workforce</span></span></a><nav class="desktop-nav"><a href="index.html">Home</a><span class="dd"><a href="about.html">About Us &#9662;</a><div><a href="about.html#about-why">Why PRAYAS?</a><a href="about.html#about-vision">Vision &amp; Purpose</a><a href="about.html#about-mission">Mission &amp; Impact</a><a href="about.html#about-collaboration">Collaboration</a><a href="about.html#about-career">Career</a><a href="contact.html">Contact Us</a></div></span><a href="students.html">Student</a><a href="employers.html">MSME</a><span class="dd"><a href="resources.html">Resources &#9662;</a><div><a href="resources.html#vlog">Vlog</a><a href="resources.html#blog">Blog</a><a href="resources.html#study">Study Material</a><a href="resources.html#events">Events</a><a href="resources.html#gallery">Gallery</a></div></span><a href="contact.html" class="active">Contact</a></nav><div class="nav-ctas"><a href="employers.html" class="btn btn-secondary btn-small">Hire Talent</a><a href="students.html" class="btn btn-primary btn-small">Apply Now</a><button class="hamburger" onclick="document.getElementById('mmenu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button></div></div><div class="mobile-menu" id="mmenu"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="students.html">Student</a><a href="employers.html">MSME</a><a href="resources.html">Resources</a><a href="contact.html" class="active">Contact</a><a href="student-portal/login.php" style="color:var(--accent-2);font-weight:700">Student Portal Login</a></div></header><main><div class="page-hero"><div class="wrap"><div class="eyebrow">Contact Us</div><h1>Let's build the future of workforce readiness together</h1></div></div><section class="section-alt" id="contact-form">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Get in Touch With PRAYAS</div>
+<h2>Let's Build the Future of Workforce Readiness Together.</h2>
+<p>Whether you're a student seeking practical training, an employer searching for day-one ready technicians, or an institution looking to collaborate.</p>
+</div>
+<div class="contact-grid">
+<form class="contact-form" id="enquiry-form" onsubmit="return handleEnquirySubmit(event)">
+<h3>Send Us an Enquiry</h3>
+<p>Fill out the details below and our team will get back to you within 24 hours.</p>
+<div class="form-row">
+<div class="field"><label for="f-name">Full Name *</label><input id="f-name" name="name" placeholder="e.g. Rahul Sharma" required="" type="text"/></div>
+<div class="field"><label for="f-email">Email Address *</label><input id="f-email" name="email" placeholder="e.g. rahul@example.com" required="" type="email"/></div>
+</div>
+<div class="form-row">
+<div class="field"><label for="f-phone">Phone Number *</label><input id="f-phone" name="phone" placeholder="e.g. +91 98765 43210" required="" type="tel"/></div>
+<div class="field"><label for="f-org">Your School / College / ITI / Company</label><input id="f-org" name="organisation" placeholder="Name of institution or company" type="text"/></div>
+</div>
+<div class="field" style="margin-bottom:18px;">
+<label for="f-role">I am a... *</label>
+<select id="f-role" name="role" required="">
+<option value="">Select one</option>
+<option>Student / Graduate</option>
+<option>MSME / Manufacturer</option>
+<option>Government / Policy</option>
+<option>Academic Institution</option>
+<option>CSR / Foundation</option>
+</select>
+</div>
+<div class="field" style="margin-bottom:20px;">
+<label for="f-msg">How Can We Help You? *</label>
+<textarea id="f-msg" name="message" placeholder="Tell us about your background or requirements..." required=""></textarea>
+</div>
+<button class="btn btn-primary" style="width:100%;" type="submit">Submit Enquiry</button>
+<p id="form-status" style="font-size:13px;color:var(--ink-soft);margin:12px 0 0;"></p>
+</form>
+<div class="contact-side">
+<div class="info-card">
+<h4>📍 Main Training Campus</h4>
+<p>R-601/1, Prayas Lab, TTC Industrial Area, Rabale MIDC, Navi Mumbai – 400701, Maharashtra</p>
+</div>
+<div class="info-card">
+<h4>Direct Contacts</h4>
+<p>Phone: <a href="tel:+919372931129">+91 9372931129</a></p>
+<p>Email: <a href="mailto:info@prayas-academy.com">info@prayas-academy.com</a></p>
+</div>
+<div class="info-card">
+<h4>Lab Hours</h4>
+<p>Monday – Saturday: 8:30 AM – 6:30 PM</p>
+<p>Sunday: Closed</p>
+</div>
+<div class="info-card notice">
+<h4>Immediate Admissions Notice</h4>
+<p>The next practical batch for Automation &amp; Control Panel Wiring begins on the 1st of next month. Seats are strictly limited to maintain 1:1 lab equipment access.</p>
+</div>
+</div>
+</div>
+</div>
+</section></main><div class="mobile-cta-bar"><a href="employers.html" class="btn btn-secondary">Hire Talent</a><a href="students.html" class="btn btn-primary">Apply Now</a></div><footer><div class="wrap"><div class="footer-grid"><div class="footer-brand"><h3 style="color:#fff">PRAYAS</h3><p>Building India's Manufacturing Workforce. Because the future of manufacturing will never be defined by technology alone. It will always be defined by the people behind it.</p></div><div><h5>Navigation</h5><nav class="footer-nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="students.html">Student</a><a href="employers.html">MSME</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a></nav></div><div><h5>Contact Us</h5><p>R-601/1, Prayas Lab, TTC Industrial Area, Rabale MIDC, Navi Mumbai - 400701, Maharashtra, India</p><p><a href="tel:+919372931129" style="color:#c7cede">+91 9372931129</a></p><p><a href="mailto:info@prayas-academy.com" style="color:#c7cede">info@prayas-academy.com</a></p><p style="margin-top:10px"><a href="https://www.facebook.com/share/1CJUdkx9NA/" target="_blank" rel="noopener" style="color:#c7cede">Facebook</a> &middot; <a href="https://x.com/theprayasacademy" target="_blank" rel="noopener" style="color:#c7cede">X</a> &middot; <a href="https://www.instagram.com/theprayasacademy" target="_blank" rel="noopener" style="color:#c7cede">Instagram</a> &middot; <a href="https://www.linkedin.com/company/the-prayas-academy/" target="_blank" rel="noopener" style="color:#c7cede">LinkedIn</a> &middot; <a href="https://www.youtube.com/@theprayasacademy" target="_blank" rel="noopener" style="color:#c7cede">YouTube</a></p></div></div><div class="footer-legal-links" style="text-align:center;padding:14px 0"><a href="privacy-policy.html" style="color:#c7cede">Privacy Policy</a> | <a href="terms-and-conditions.html" style="color:#c7cede">Terms &amp; Conditions</a></div><div class="footer-bottom">&copy; 2026 Prayas - The Automation Academy | Absolute Motion Private Limited. All Rights Reserved.</div></div></footer><script>
+
+const mq=matchMedia('(max-width:800px)');
+document.querySelectorAll('[data-flow]').forEach(f=>{const p=f.querySelector('.panel,.ans'),n=[...f.querySelectorAll('.node')],home=p.parentElement,nx=p.nextSibling;let cur=n[0];
+ const place=()=>{if(mq.matches){const li=cur.closest('li');li?li.appendChild(p):cur.after(p)}else home.insertBefore(p,nx)};
+ const show=b=>{cur=b;n.forEach(x=>x.classList.toggle('on',x===b));p.querySelector('h4').textContent=b.dataset.t;p.querySelector('p').textContent=b.dataset.d;place()};
+ n.forEach(b=>b.onclick=()=>show(b));mq.addEventListener('change',()=>show(cur));show(n[0])});
+document.querySelectorAll('[data-tabs]').forEach(t=>{const bs=t.querySelectorAll('button'),root=t.parentElement;const go=id=>{bs.forEach(b=>b.classList.toggle('on',b.dataset.tab===id));root.querySelectorAll('[data-pane]').forEach(p=>p.classList.toggle('on',p.dataset.pane===id))};
+ bs.forEach(b=>b.onclick=()=>go(b.dataset.tab));const fromHash=()=>{const h=location.hash.slice(1);if([...bs].some(b=>b.dataset.tab===h))go(h)};go(bs[0].dataset.tab);fromHash();addEventListener('hashchange',fromHash)});
+const bt=document.getElementById('bridge-btn');if(bt)bt.onclick=()=>{const s=document.querySelector('.sides');s.classList.toggle('built');bt.textContent=s.classList.contains('built')?'Reset':'Build the bridge \u2192'};
+const c=document.getElementById('calc');if(c){const u=()=>{const v=i=>+c.querySelector('#'+i).value||0;document.getElementById('cost').textContent='\u20B9'+Math.round(v('hires')*v('months')*v('salary')*(1-v('prod')/100)).toLocaleString('en-IN')};c.querySelectorAll('input').forEach(i=>i.oninput=u);u()}
+// Instagram: paste post/reel URLs, e.g. 'https://www.instagram.com/reel/XXXXXXXX/'
+const IG=[];const g=document.getElementById('ig');if(g){if(IG.length){g.innerHTML=IG.map(u=>'<blockquote class="instagram-media" data-instgrm-permalink="'+u+'" data-instgrm-version="14" style="max-width:420px;width:100%;margin:0"></blockquote>').join('');const s=document.createElement('script');s.async=1;s.src='https://www.instagram.com/embed.js';document.body.appendChild(s)}else g.innerHTML='<div class="card" style="grid-column:1/-1;text-align:center"><h4>Videos from @theprayasacademy</h4><p class="muted">Instagram reels appear here once their links are added.</p><a class="btn btn-primary" href="https://www.instagram.com/theprayasacademy" target="_blank" rel="noopener">Follow on Instagram</a></div>'}
+
+  // 1. Set up the Google Apps Script backend using google-apps-script.gs (see the setup
+  //    comments at the top of that file), then paste the Web App URL it gives you below.
+  const ENQUIRY_ENDPOINT = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+  async function handleEnquirySubmit(e){
+    e.preventDefault();
+    const form = e.target;
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    const payload = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      organisation: form.organisation.value,
+      role: form.role.value,
+      message: form.message.value
+    };
+
+    if (ENQUIRY_ENDPOINT.includes("PASTE_YOUR")) {
+      statusEl.textContent = "Form backend isn't connected yet — please email admissions@prayas.org or call +91-22-4500 0947 directly.";
+      return false;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.textContent = "Sending...";
+
+    try {
+      // mode:'no-cors' is required for Apps Script web apps — the request still
+      // reaches your script and gets logged/emailed, we just can't read the response.
+      await fetch(ENQUIRY_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+      statusEl.textContent = "Thanks — we've received your enquiry and will be in touch within 24 hours.";
+      form.reset();
+    } catch (err) {
+      statusEl.textContent = "Something went wrong sending this. Please email admissions@prayas.org or call +91-22-4500 0947 directly.";
+    } finally {
+      submitBtn.disabled = false;
+    }
+    return false;
+  }
+</script></body></html>
